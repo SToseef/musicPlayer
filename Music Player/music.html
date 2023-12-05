@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport">
+        <link rel="stylesheet" type="text/css" href="music.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    </head>
+    <body>
+
+        <script src="musics.js"></script> 
+        <div class="player">
+            <img
+            src="covers/cover1.jpg"
+            class="cover"
+            alt="cover"
+            />
+            <h1 class = "track-title">End Game</h1>
+            <span class="artist-name">Taylor Swift</span>
+            <div class="timeline-slider">
+                <div class ="timeline">
+                    <small class="time">0:00</small>
+                    <small class="fulltime">5:11</small>
+                </div>
+                <div class="range-slider">
+                    <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="0"
+                    class="slider"
+                    />
+                    <div class="slider-thumb"></div>
+                    <div class="progress"></div>
+                </div>
+            </div>
+            <div class="volume-slider">
+                <div class = "volume-icon">
+                    <span class="material-symbols-outlined">
+                        volume_down
+                    </span>
+                </div>
+                <div class="range-slider">
+                    <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="50"
+                    class="slider"
+                    />
+                    <div class="progress"></div>
+                </div>
+            </div>
+                <div class="controls">
+                    <button class="btn" id="btnPrev">
+                        <span class="material-symbols-outlined">fast_rewind</span>
+                    </button>
+                    <button class="btn btn-main" id="mainPlayBtn">
+                        <span class="material-symbols-outlined">play_arrow</span>
+                    </button>
+                    <button class="btn" id="btnNext">
+                        <span class="material-symbols-outlined">fast_forward</span>
+                    </button>
+                </div>
+            </div>
+            <audio id="audio" hidden>
+                <source src="music/EndGame.mp3"/>
+            </audio>
+        </div>
+
+    </body>
+</html>
