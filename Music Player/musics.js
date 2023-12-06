@@ -181,4 +181,42 @@ window.onload=function(){
     customSlider();
 
     slider.addEventListener("input", customSlider);
+
+    //Volume Slider
+    let val;
+
+    function customVolumeSlider() {
+        const maxVal = volumeSlider.getAttribute("max");
+        val = (volumeSlider.value / maxVal) * 100 + "%";
+        volumeProgress.style.width = val;
+        audio.volume = volumeSlider.value / 100;
+        
+        
+    }
+    
+    customVolumeSlider();
+    volumeSlider.addEventListener("input", customVolumeSlider);
+
+    volumeIcon.addEventListener('click', () => {
+        if(volumeMuted === false) {
+            volumeIcon.innerHTML = `
+                <span class = "material-symbols-outlined">
+                    volume_off
+                </span>
+         `;
+         audio.volume = 0;
+         volumeProgress.style.width = 0;
+         volumeMuted = true;
+        } else {
+            volumeIcon.innerHTML = `
+                <span class = "material-symbols-outlined">
+                    volume_down
+                </span>
+         `;
+         audio.volume = 0.5;
+         volumeProgress.style.width = val;
+         volumeMuted = false;
+        }
+    });
+    
 }
